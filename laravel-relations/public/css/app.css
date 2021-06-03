@@ -54,6 +54,11 @@
   font-weight: normal;
 }
 
+.container main .mainList li h2 a {
+  font-size: 20px;
+  text-decoration: none;
+}
+
 .container main .mainList li ul {
   margin-left: 20px;
 }
