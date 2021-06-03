@@ -20,4 +20,9 @@ class MainController extends Controller
         $pilot = Pilot::findOrFail($id);
         return view('pages.showPilot', compact('pilot'));
     }
+
+    public function createCar()
+    {
+        return view('pages.createCar');
+    }
 }

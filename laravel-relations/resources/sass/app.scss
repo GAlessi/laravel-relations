@@ -8,8 +8,8 @@
 .btn{
     padding: 10px 20px;
     background-color: red;
-    color: grey;
     border: 1px solid darkgrey;
+    text-decoration: none;
 }
 
 .container{
@@ -26,7 +26,11 @@
         padding: 30px;
         text-align: center;
     }
-    main.home{
+    main{
+
+        min-height: calc(100vh - 161px);
+        padding: 30px;
+
         h1{
             text-align: center;
             margin-bottom: 30px;
@@ -57,5 +61,15 @@
             }
         }
 
+    }
+    main.form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .btn{
+            margin: 20px 0;
+        }
     }
 }

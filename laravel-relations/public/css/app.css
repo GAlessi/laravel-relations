@@ -7,8 +7,8 @@
 .btn {
   padding: 10px 20px;
   background-color: red;
-  color: grey;
   border: 1px solid darkgrey;
+  text-decoration: none;
 }
 
 .container {
@@ -28,32 +28,48 @@
   text-align: center;
 }
 
-.container main.home h1 {
+.container main {
+  min-height: calc(100vh - 161px);
+  padding: 30px;
+}
+
+.container main h1 {
   text-align: center;
   margin-bottom: 30px;
 }
 
-.container main.home .mainList {
+.container main .mainList {
   list-style: none;
 }
 
-.container main.home .mainList li {
+.container main .mainList li {
   margin-bottom: 30px;
 }
 
-.container main.home .mainList li h2 {
+.container main .mainList li h2 {
   margin-bottom: 10px;
 }
 
-.container main.home .mainList li h2 span {
+.container main .mainList li h2 span {
   font-weight: normal;
 }
 
-.container main.home .mainList li ul {
+.container main .mainList li ul {
   margin-left: 20px;
 }
 
-.container main.home .mainList li ul li {
+.container main .mainList li ul li {
   margin-bottom: 10px;
+}
+
+.container main.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container main.form .btn {
+  margin: 20px 0;
 }
 
