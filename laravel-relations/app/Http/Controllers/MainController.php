@@ -51,10 +51,10 @@ class MainController extends Controller
          return redirect() -> route('home');
     }
 
-    public function destroy($id)
-    {
-        $car = Car::findOrFail($id);
-        $car -> delete();
-        return redirect() -> route('home');
-    }
+    // public function destroy($id)
+    // {
+    //     $car = Car::findOrFail($id);
+    //     $car -> delete();
+    //     return redirect() -> route('home');
+    // }
 }

@@ -13,5 +13,5 @@ Route::get('/car/create', 'MainController@createCar')
 Route::post('/car/store', 'MainController@storeCar')
     -> name('storeCar');
 
-Route::get('destroy/{id}', 'MainController@destroy')
-    -> name('destroy');
+// Route::get('destroy/{id}', 'MainController@destroy')
+//     -> name('destroy');
