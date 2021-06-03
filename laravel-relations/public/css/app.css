@@ -69,6 +69,12 @@
   align-items: center;
 }
 
+.container main.form input,
+.container main.form select {
+  margin: 10px 0;
+  min-width: 300px;
+}
+
 .container main.form .btn {
   margin: 20px 0;
 }

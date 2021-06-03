@@ -10,3 +10,5 @@ Route::get('/home/pilot/{id}', 'MainController@showPilot')
 
 Route::get('/car/create', 'MainController@createCar')
     -> name('createCar');
+Route::post('/car/store', 'MainController@storeCar')
+    -> name('storeCar');

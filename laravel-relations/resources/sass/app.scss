@@ -68,6 +68,11 @@
         justify-content: center;
         align-items: center;
 
+        input, select{
+            margin: 10px 0;
+            min-width: 300px;
+        }
+
         .btn{
             margin: 20px 0;
         }
