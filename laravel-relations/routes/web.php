@@ -13,5 +13,10 @@ Route::get('/car/create', 'MainController@createCar')
 Route::post('/car/store', 'MainController@storeCar')
     -> name('storeCar');
 
+Route::get('edit/car/{id}', 'MainController@editCar')
+    -> name('editCar');
+Route::post('update/car/{id}', 'MainController@updateCar')
+    -> name('updateCar');
+
 // Route::get('destroy/{id}', 'MainController@destroy')
 //     -> name('destroy');

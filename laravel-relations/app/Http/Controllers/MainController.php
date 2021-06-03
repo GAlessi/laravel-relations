@@ -51,6 +51,30 @@ class MainController extends Controller
          return redirect() -> route('home');
     }
 
+    public function editCar($id)
+    {
+        $car = Car::findOrFail($id);
+        $brands = Brand::all();
+        $pilots = Pilot::all();
+
+        return view('pages.editCar', compact('car','brands','pilots'));
+    }
+
+    public function updateCar(Request $request, $id)
+    {
+        // dd($request -> all());
+
+        $validated = $request -> validate([
+            'name' => 'required|string|min:3',
+            'model' => 'required|string|min:3',
+            'KW' => 'required|integer|min:10|max:3000',
+        ]);
+
+        $car = Car::findOrFail($id);
+        $car -> update($validated);
+        return redirect() -> route('home');
+    }
+
     // public function destroy($id)
     // {
     //     $car = Car::findOrFail($id);

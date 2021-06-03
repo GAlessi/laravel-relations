@@ -9,9 +9,9 @@
                     <h2>
                         <span>Car name:</span>
                         {{$car -> name}}
-                        {{-- <a href="{{route('destroy', $car -> id)}}"> --}}
-                            <a href="#">&#10060;</a>
-                        {{-- </a> --}}
+                        <a href="{{route('editCar', $car -> id)}}">
+                            &#9998;
+                        </a>
                     </h2>
                     <h2>
                         <span>Model:</span>
