@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: red;
+  color: grey;
+  border: 1px solid darkgrey;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container header,
+.container footer {
+  background-color: grey;
+  width: 100%;
+  padding: 30px;
+  text-align: center;
+}
+
+.container main.home h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.container main.home .mainList {
+  list-style: none;
+}
+
+.container main.home .mainList li {
+  margin-bottom: 30px;
+}
+
+.container main.home .mainList li h2 {
+  margin-bottom: 10px;
+}
+
+.container main.home .mainList li h2 span {
+  font-weight: normal;
+}
+
+.container main.home .mainList li ul {
+  margin-left: 20px;
+}
+
+.container main.home .mainList li ul li {
+  margin-bottom: 10px;
+}
+
