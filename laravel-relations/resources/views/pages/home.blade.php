@@ -27,10 +27,10 @@
                     <ul>
                         @foreach ($car->pilots as  $pilot)
                             <li>
-                                <h3>
+                                <h3><a href="{{ route('show', $pilot -> id) }}">
                                     {{$pilot -> name}}
                                     {{$pilot -> lastname}}
-                                </h3>
+                                </a></h3>
                                 Nationality: {{$pilot -> nationality}} </br>
                                 Date of Birth: {{$pilot -> date_of_birth}}
 
