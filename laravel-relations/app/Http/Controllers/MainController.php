@@ -36,13 +36,14 @@ class MainController extends Controller
        	 // dd($request -> all());
 
          $validated = $request -> validate([
-             'name' => 'required|string|min:3',
-             'model' => 'required|string|min:3',
-             'KW' => 'required|integer|min:10|max:3000',
-             'brand_id' => 'required|exists:brands,id|integer',
-             'pilots_id' => 'required'
+            'name' => 'required|string|min:3',
+            'model' => 'required|string|min:3',
+            'KW' => 'required|integer|min:100|max:3000',
+            'brand_id' => 'required|exists:brands,id|integer',
+            'pilots_id' => 'required|exists:pilots,id|array',
+            'pilots_id.*' => 'integer',
 
-         ]);
+        ]);
 
          // dd($validated);
 
@@ -74,9 +75,10 @@ class MainController extends Controller
         $validated = $request -> validate([
             'name' => 'required|string|min:3',
             'model' => 'required|string|min:3',
-            'KW' => 'required|integer|min:10|max:3000',
+            'KW' => 'required|integer|min:100|max:3000',
             'brand_id' => 'required|exists:brands,id|integer',
-            'pilots_id' => 'required'
+            'pilots_id' => 'required|exists:pilots,id|array',
+            'pilots_id.*' => 'integer',
 
         ]);
 
