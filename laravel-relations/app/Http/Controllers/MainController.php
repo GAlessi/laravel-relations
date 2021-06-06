@@ -11,7 +11,9 @@ class MainController extends Controller
 {
     public function home()
     {
-        $cars = Car::all();
+        // $cars = Car::all();
+        $cars = Car::where('deleted', false) -> get();
+
 
         return view('pages.home', compact('cars'));
     }
@@ -37,7 +39,12 @@ class MainController extends Controller
              'name' => 'required|string|min:3',
              'model' => 'required|string|min:3',
              'KW' => 'required|integer|min:10|max:3000',
+             'brand_id' => 'required|exists:brands,id|integer',
+             'pilots_id' => 'required'
+
          ]);
+
+         // dd($validated);
 
          $brand = Brand::findOrFail($request -> get('brand_id'));
 
@@ -68,17 +75,32 @@ class MainController extends Controller
             'name' => 'required|string|min:3',
             'model' => 'required|string|min:3',
             'KW' => 'required|integer|min:10|max:3000',
+            'brand_id' => 'required|exists:brands,id|integer',
+            'pilots_id' => 'required'
+
         ]);
 
         $car = Car::findOrFail($id);
         $car -> update($validated);
+
+        $brand = Brand::findOrFail($request -> brand_id);
+        $car -> brand() -> associate($brand);
+        $car -> save();
+        // dd($car);
+
+        $car -> pilots() -> sync($request -> pilots_id);
+        $car -> save();
+        // dd($car);
+
         return redirect() -> route('home');
     }
 
-    // public function destroy($id)
-    // {
-    //     $car = Car::findOrFail($id);
-    //     $car -> delete();
-    //     return redirect() -> route('home');
-    // }
+    public function destroy($id)
+    {
+        $car = Car::findOrFail($id);
+        $car -> deleted = true;
+        $car -> save();
+
+        return redirect() -> route('home');
+    }
 }

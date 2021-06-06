@@ -18,5 +18,5 @@ Route::get('edit/car/{id}', 'MainController@editCar')
 Route::post('update/car/{id}', 'MainController@updateCar')
     -> name('updateCar');
 
-// Route::get('destroy/{id}', 'MainController@destroy')
-//     -> name('destroy');
+Route::get('destroy/{id}', 'MainController@destroy')
+    -> name('destroy');

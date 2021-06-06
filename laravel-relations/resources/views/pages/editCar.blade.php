@@ -30,16 +30,29 @@
             </div>
             <div>
                 <select id="brand_id" name="brand_id" required >
-                    <option selected disabled>Select a Brand</option>
                     @foreach ($brands as $brand)
-                        <option value="{{ $brand -> id }}">{{ $brand -> name }} ({{ $brand -> nationality }})</option>
+                        <option value="{{ $brand -> id }}">
+
+                        @if ($car -> brand -> id == $brand -> id)
+                            selected
+                        @endif
+                    {{ $brand -> name }} ({{ $brand -> nationality }})</option>
                     @endforeach
                 </select>
             </div>
             <div>
                 <select id="pilots_id[]" name="pilots_id[]" required multiple>
                     @foreach ($pilots as $pilot)
-                        <option value="{{ $pilot -> id }}">
+                        <option value="{{ $pilot -> id }}"
+
+
+                            @foreach ($car -> pilots as $carPilot)
+                                @if ($carPilot -> id == $pilot -> id)
+                                    selected
+                                @endif
+                            @endforeach
+
+                        >
                             {{ $pilot -> name }}
                             {{ $pilot -> lastname }}
                         </option>
